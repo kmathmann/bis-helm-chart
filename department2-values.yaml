@@ -1,0 +1,3 @@
+host: department2.example.com
+departmentName: "department2"
+replicas: 2

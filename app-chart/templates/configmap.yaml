@@ -11,7 +11,7 @@ data:
       server {
         listen 80;
         location / {
-          return 200 "===============================\n\n   Greeting from Department {{ .Values.departmentName }} ! {{ .Values.message }}  \n\n===============================\n";
+          return 200 "Greeting from Department {{ .Values.departmentName }}! {{ .Values.message }}";
         }
       }
     }
