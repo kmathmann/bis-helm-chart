@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-nginx-config
+data:
+  nginx.conf: |
+    events {
+      worker_connections  1024;
+    }
+    http {
+      server {
+        listen 80;
+        location / {
+          return 200 "===============================\n\n   Greeting from Department {{ .Values.departmentName }} ! {{ .Values.message }}  \n\n===============================\n";
+        }
+      }
+    }

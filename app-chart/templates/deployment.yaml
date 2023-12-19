@@ -1,27 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Release.Name }}
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: {{ .Release.Name }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      {{- with .Values.rollingUpdate }}
-        {{- toYaml . | nindent 6 }}
-        {{- end }}
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: {{ .Release.Name }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/config_map.yaml") . | sha256sum }}
+        checksum/values: {{ .Values.department + .Values.message | sha256sum }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Release.Name }}
           image: nginx:stable
           ports:
             - containerPort: 80
@@ -32,4 +34,4 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: nginx-config
+            name: {{ .Release.Name }}-nginx-config
