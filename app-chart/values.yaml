@@ -2,10 +2,3 @@ host: department1.example.com
 departmentName: "department1"
 message: "Welcome on our website!"
 replicas: 1
-
-# mysql:
-#     # deploy = true  -> Deploys a mysql database
-#     # deploy = false -> url is used to connect to an existing database
-#     deploy: true
-#     url: "" # URL to an existing database
-#     rootPassword: "password"
