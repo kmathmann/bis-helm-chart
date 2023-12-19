@@ -1,0 +1,5 @@
+rollingUpdate:
+    maxUnavailable: 1
+    maxSurge: 1
+replicas: 1
+customMessage: ""
