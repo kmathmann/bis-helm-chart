@@ -1,4 +1,4 @@
-host: department1.xyz
+host: department1.local
 department: "department1"
 message: "Welcome on our website!"
 replicas: 1

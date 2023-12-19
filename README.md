@@ -2,12 +2,12 @@
 Namespaces:
 - bis 
 - bis2
+
 Domains: 
-- department1.xyz 
-- department2.xyz
+- department1.local 
+- department2.local
 
 # Notes
-
 helm package app-chart -d charts
 
 -> Zeigen, dass die tgz erstellt wurde
@@ -57,15 +57,15 @@ helm upgrade --install bis bis-repo/bis-app -n bis
 kubectl get all -n bis
 
 -> Ausgabe zeigen
--> Browser: department1.xyz
-curl department1.xyz
+-> Browser: department1.local
+curl department1.local
 
 helm upgrade --install bis bis-repo/bis-app -n bis --set message="Greetings to BIS!!" --set replicas=3
 
 kubectl get pods -n bis
 
 -> nochmal Website zeigen
-curl department1.xyz
+curl department1.local
 
 ## zweite Abteilung
 clear
@@ -75,7 +75,7 @@ clear
 helm upgrade --install bis bis-repo/bis-app -n bis2 -f department2-values.yaml
 
 kubectl get pods -n bis2
--> Browser: department2.xyz
-curl department2.xyz
+-> Browser: department2.local
+curl department2.local
 
-curl department1.xyz
+curl department1.local
