@@ -18,6 +18,15 @@ helm package app-chart -d charts
 helm repo index charts
 
 -> index.yaml zeigen
+
+-> Der Ordner charts kann mit einem beliebigen Werbserver bereitgestellt werden.
+-> z.B. Habor, Gitlab als spezielle Registry
+-> Hier wird zum Hosten der Dateien eine Github Page genutzt
+
+git add *
+git commit -m "add charts"
+git push
+
 -> Zeigen: Github Repo mit Github Page - quasi Webserver
 -> https://kmathmann.github.io/bis-helm-chart/charts 
 

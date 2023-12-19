@@ -20,7 +20,7 @@ spec:
         app: {{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/config_map.yaml") . | sha256sum }}
-        checksum/values: {{ .Values.department + .Values.message | sha256sum }}
+        checksum/values: {{ printf "%s-%s" .Values.department .Values.message | sha256sum }}
     spec:
       containers:
         - name: {{ .Release.Name }}
