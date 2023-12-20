@@ -8,11 +8,14 @@ Domains:
 - department2.local
 
 # Notes
-- Robert hat gezeigt, wie man ein Helm Chart installiert welches z.B. von der Community für bestimmte Dienste bereitgestellt wird. Im Unternehmen gibt es aber genauso den Use Case die eigene Software über ein Helm Chart zu deployen.
-- Chart kurs vorstellen
-    - Idee: Webseite für die einzelnen Abteilungen des Unternehmens
-- Um das Package anderen im Unternehmen den Abteilungen zur Verfügung zu stellen, müssen wir es zu einem Paket zusammenfassen
-  
+- Robert hat gezeigt, Helm Chart von extern installieren
+- Ich zeige: Eigene App über Helmchart bereitstellen
+  - Im Unternehmen
+  - Für Kunden
+- Als Beispiel soll jede Abteilung im Unternehmen eine Website bekommen und dafür wurde ein Helm Chart erstellt
+- Chart.yaml und Values.yaml zeigen
+- configmap.yaml zeigen
+- zum bereitstellen packen
 ```
 helm package app-chart -d charts
 ```
