@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  bis-app:
+  - apiVersion: v2
+    appVersion: "1.1"
+    created: "2023-12-20T01:33:32.035836+01:00"
+    description: sample nginx deployment
+    digest: 9a2d46d068fdc72bb5c6ecde5ae2cc8ec2f6e11b4d03cc85458e0637653ea440
+    name: bis-app
+    type: application
+    urls:
+    - bis-app-1.1.tgz
+    version: "1.1"
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2023-12-20T01:33:32.035965+01:00"
+    description: sample nginx deployment
+    digest: 7d75caaf872f425860759883c629ff50110684bdbca3427702c997bc16e7c0e7
+    name: bis-app
+    type: application
+    urls:
+    - bis-app-1.tgz
+    version: "1"
+generated: "2023-12-20T01:33:32.035501+01:00"
