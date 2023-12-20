@@ -39,20 +39,16 @@ helm package app-chart -d charts
 helm repo index charts
 ```
 
-- index.yaml zeigen
-
-- Der Ordner charts kann mit einem beliebigen Werbserver bereitgestellt werden.  
-- z.B. Gitlab oder Harbor als spezielle Registry  
-- Ich nutze zum Hosten der Dateien eine Github Page
-
 ```
 git add *
 git commit -m "add charts"
 git push
 ```
 
-- Github Repo mit Github Page - quasi Webserver  
-- https://kmathmann.github.io/bis-helm-chart/charts 
+- index.yaml zeigen
+
+- Der Ordner charts kann mit einem beliebigen Werbserver bereitgestellt werden.  In diesem Fall Github Pages
+- z.B. Gitlab oder Harbor als spezielle Registry
 
 ```
 curl https://kmathmann.github.io/bis-helm-chart/charts/index.yaml
@@ -76,26 +72,20 @@ helm repo list
 ```
 helm upgrade --install bis bis-repo/bis-app -n bis
 ```
-```
-kubectl get all -n bis
-```
-
-- Ausgabe zeigen  
-- Browser: department1.local
 
 ```
 curl department1.local
 ```
 
+- Message für das Department anpassen und replicas erhöhen
 ```
 helm upgrade --install bis bis-repo/bis-app -n bis --set message="Greetings to BIS!!" --set replicas=3
 ```
+
 ```
 kubectl get pods -n bis
 ```
 
-
-- nochmal Website zeigen
 ```
 curl department1.local
 ```
@@ -109,7 +99,7 @@ helm upgrade --install bis bis-repo/bis-app -n bis2 -f department2-values.yaml
 ```
 kubectl get pods -n bis2
 ```
-- Browser: department2.local
+
 ```
 curl department2.local
 curl department1.local
